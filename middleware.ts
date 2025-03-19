@@ -15,7 +15,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const { data: oAuthData, error: oAuthError } = await supabase.auth.signInWithOAuth({
     provider: "discord" as Provider,
-    options: {redirectTo: "http://localhost:4321"},
+    options: {redirectTo: "http://localhost:4321/api/auth/callback"},
   });
 
   if (oAuthError) {
